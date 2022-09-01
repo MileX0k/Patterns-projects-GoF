@@ -280,63 +280,6 @@ void MainWindow::on_fontComboBox_currentFontChanged(const QFont &f)
     }
     ui->plainTextEdit->setFocus();
 }
-//==================TODO==========================
-
-void MainWindow::on_formatButton_clicked() //Доделать форматирование текста
-{
-
-    if (ui->formatButton->isChecked())
-    {
-        QTextCharFormat form = ui->plainTextEdit->textCursor().charFormat();
-        qDebug() << form.font() << " " << form.font().pointSize();
-        ui->formatButton->setChecked(true);
-        qDebug() << "clicked button";
-        setFontToText(form);
-        //ui->formatButton->setCheckable(false);
-        //ui->plainTextEdit->setFocus();
-    } else ui->formatButton->setChecked(false);
-}
-
-void MainWindow::setFontToText(QTextCharFormat form)
-{
-    QTextCursor cursor = ui->plainTextEdit->textCursor();
-
-    if (event->type() == QEvent::MouseButtonPress)
-    {
-        qDebug() << "Inside event";
-        if (mouse->button() == Qt::LeftButton)
-        {
-            qDebug() << "Inside left button";
-//            qDebug() << cursor.currentFrame();
-//            if (cursor != ui->plainTextEdit->textCursor())
-//            for (cursor.selectionStart() ; cursor.selectionEnd();)
-//            {
-//                qDebug() << "inside selection";
-//        //        ui->plainTextEdit->setFont(form.font());
-//        //        ui->plainTextEdit->setFontPointSize(form.font().pointSize());
-//                cursor.setCharFormat(form);
-
-//                ui->formatButton->setChecked(false);
-//            }
-
-        }
-
-
-    }
-
-
-//    if (ui->plainTextEdit->textCursor().hasSelection())
-//    {
-//        qDebug() << form.font();
-//        qDebug() << form.fontPointSize();
-//        ui->plainTextEdit->textCursor().setCharFormat(form);
-//        ui->plainTextEdit->setFont(form.font());
-//        ui->plainTextEdit->setFontPointSize(form.fontPointSize());
-//        ui->formatButton->setChecked(false);
-//    }
-}
-//======================COMPLITE========================
-
 
 void MainWindow::on_sizeFontBox_valueChanged(int arg1)
 {
